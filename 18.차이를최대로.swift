@@ -2,7 +2,7 @@ import Foundation
 
 func 차이를최대로() {
     let n = Int(readLine()!)!
-    var nums = readLine()!.split(separator: " ").map { Int(String($0))! }
+    let nums = readLine()!.split(separator: " ").map { Int(String($0))! }
     var maxSum = 0
 
     func calcNums(_ arr: [Int]) -> Int {
