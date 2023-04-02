@@ -16,16 +16,17 @@ func 차이를최대로() {
     }
 
     func dfs(_ permutation: [Int], _ numsToTraverse: [Int]) -> Void {
+        
+        if permutation.count == nums.count {
+            maxSum = max(maxSum, calcNums(permutation))
+        }
+        
         for (i, num) in numsToTraverse.enumerated() {
             var permutation = permutation
             var numsToTraverse = numsToTraverse
             
             permutation.append(num)
             numsToTraverse.remove(at: i)
-            
-            if permutation.count == nums.count {
-                maxSum = max(maxSum, calcNums(permutation))
-            }
             
             dfs(permutation, numsToTraverse)
         }
