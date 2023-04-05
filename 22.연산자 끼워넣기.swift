@@ -36,18 +36,17 @@ func 연산자끼워넣기() {
         var rest = rest
         
         for (i, num) in rest.enumerated() {
-            if num > 0 {
-                permutation.append(i)
-                rest[i] -= 1
-                dfs(permutation, rest)
-                rest[i] += 1
-                permutation.removeLast()
-            }
+            guard num > 0 else { continue }
+            
+            permutation.append(i)
+            rest[i] -= 1
+            dfs(permutation, rest)
+            rest[i] += 1
+            permutation.removeLast()
         }
     }
     
     dfs([], operators)
-    
     
     print(maxResult)
     print(minResult)
