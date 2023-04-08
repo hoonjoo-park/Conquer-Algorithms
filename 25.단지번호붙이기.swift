@@ -1,6 +1,6 @@
 import Foundation
 
-func 단지번호붙이기_BFS() {
+func 단지번호붙이기() {
     let n = Int(readLine()!)!
     var grid = [[Int]]()
     var totalCount = 0
@@ -23,7 +23,7 @@ func 단지번호붙이기_BFS() {
         }
     }
     
-    func bfs(_ row: Int, _ col: Int) {
+    func dfs(_ row: Int, _ col: Int) {
         if row < 0 || row >= n || col < 0 || col >= n { return }
         
         guard grid[row][col] == 1 else { return }
@@ -31,10 +31,10 @@ func 단지번호붙이기_BFS() {
         grid[row][col] = 0
         count += 1
         
-        bfs(row - 1, col)
-        bfs(row, col + 1)
-        bfs(row + 1, col)
-        bfs(row, col - 1)
+        dfs(row - 1, col)
+        dfs(row, col + 1)
+        dfs(row + 1, col)
+        dfs(row, col - 1)
     }
     
     print(totalCount)
