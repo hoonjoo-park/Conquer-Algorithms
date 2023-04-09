@@ -18,7 +18,7 @@ func 단지번호붙이기() {
             count = 0
             totalCount += 1
             
-            bfs(row, col)
+            dfs(row, col)
             counts.append(count)
         }
     }
